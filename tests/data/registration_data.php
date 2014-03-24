@@ -1,13 +1,17 @@
 <?php
 
+// Pass crmId - in URL
+if ( isset($_GET['crmId']) ) $crmId = $_GET['crmId'];
+else $crmId = rand(100, 1000);
+
 // mocks PimCore adding a new contact
 
 // Data to add - EDIT THIS DATA FOR THE TEST
 $data = array(
     'step_1' => array(  
-        'firstName' => 'Al6', //its just this and the email that needs to change to create a new contact record
-        'surname' => 'Elliott6',
-        'emailAddress' => 'al6@dallasmatthews.co.uk',
+        'firstName' => 'Al' . $crmId, 
+        'surname' => 'Elliott' . $crmId,
+        'emailAddress' => 'al' . $crmId . '@dallasmatthews.co.uk',
         'contactNumber' => '07703345633',
         'promoCode' => '',
         'facebookUid' => 'xfxfxfx',
@@ -22,7 +26,7 @@ $data = array(
         'region' => 'Fictionshire',
         'postcode' => 'NO7 R3AL',
         'country' => 'Magikestan2',
-        'crmId' => 35,
+        'crmId' => $crmId,
 
         // Subscription details
         'subscriptionType' => 'Anytime',   // Is this the product name?
@@ -36,12 +40,12 @@ $data = array(
     ),
     'step_3' => array(
         // Ancillary info
-        'crmId' => 35,
+        'crmId' => $crmId,
         'dob' => '1977-05-25', //how is this stored?
         'gender' => 'female', //lowercase
-        'fitnessLevel' => '1. Beginner',
-        'primaryGoal' => 'Balance',
-        'secondaryGoal' => 'Definition'
+        'fitnessLevel' => '1. Beginner' . $crmId,
+        'primaryGoal' => 'Balance' . $crmId,
+        'secondaryGoal' => 'Definition' . $crmId,
     ),
 );
 
